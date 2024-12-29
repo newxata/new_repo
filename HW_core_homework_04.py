@@ -49,13 +49,15 @@ def get_cats_info(path):
                     'name': name,
                     'age': age
                 })
+        # Повертаємо список
+        return cats_list
     # Додаємо відповідні виключення 
     except ValueError:
-        print(f'Рядок не відповідає формату: {line.strip()}')
+        return f'Рядок не відповідає формату: {line.strip()}'
     except FileNotFoundError:
-        print(f'Файл не знайдено!')
+        return f'Файл не знайдено!'
 
-    return cats_list
+    
 
 cats_info = get_cats_info("path/to/cats_file.txt")
 print(cats_info)
